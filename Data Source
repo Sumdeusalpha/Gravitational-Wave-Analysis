@@ -1,0 +1,5 @@
+This project uses public gravitational wave data from the Gravitational Wave Open Science Center (GWOSC):
+
+GWOSC: https://www.gw-openscience.org/
+
+The script fetches event metadata and strain time series via gwosc and gwpy for detectors H1 and L1 where available.
