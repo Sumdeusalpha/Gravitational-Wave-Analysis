@@ -1,0 +1,209 @@
+For each event in the event list:
+
+Fetch 120 s of strain data around the event GPS time for each detector.
+
+Perform a legacy “big window” analysis:
+
+Compute amplitude peak-to-peak (P2P), peak-to-dip (P2D), and dip-to-dip (D2D) ratios over the full 120 s.
+
+Count matches to all known constants.
+
+Save these counts to legacy_120s_constant_matches.csv.
+
+Perform a focused ON/OFF analysis:
+
+ON window: [GPS − 0.2 s, GPS + 0.1 s].
+
+OFF windows: [GPS − 50, GPS − 20] and [GPS + 20, GPS + 50].
+
+Compute amplitude and time-interval ratios in each window.
+
+Count constant matches separately for:
+
+ON / OFF1 / OFF2
+
+amplitude P2P / P2D / D2D
+
+time P2P / P2D / D2D
+
+Save segment-level results to constant_matches_per_segment.csv.
+
+Generate null surrogates for ON windows:
+
+Phase-scrambled surrogates (preserve power spectrum, randomize phase).
+
+Segment-shuffled surrogates (shuffle 0.1 s chunks).
+
+Repeat the same ratio + constant-match analysis.
+
+Build feature vectors:
+
+For each segment (ON / OFF / null), create a binary vector: one feature per constant = “did this segment hit this constant at least once?”.
+
+Label segments:
+
+1 = real ON
+
+0 = OFF or null (background).
+
+Run Monte Carlo bootstraps on ON ratios:
+
+Sample from the pool of ON ratios to simulate “random ON-like” segments.
+
+Compute expected per-segment counts and per-segment standard deviations for each constant.
+
+Save to monte_carlo_per_segment_stats.csv.
+
+Compute global and per-event statistics:
+
+aggregate_on_counts.csv — total ON-window counts per constant across all events.
+
+chi_like_global_total.csv — global Z and χ-like statistics vs the Monte Carlo expectation.
+
+per_event_z_scores.csv — per-event Z / χ-like approximations vs the ON-ratio MC.
+
+Evaluate tolerance robustness:
+
+Recount ON-window constant matches at multiple tolerances (e.g. 0.03, 0.05, 0.07).
+
+Save to tolerance_robustness_on_ratios.csv with ranks per tolerance.
+
+Train and evaluate a Random Forest classifier:
+
+Train/test split by segments (standard):
+
+Save:
+
+classifier_feature_importances.csv
+
+classifier_test_predictions.csv
+
+classifier_crossval_scores.csv
+
+rf_real_vs_null_model.joblib
+
+Event-grouped splits (harder test):
+
+Use GroupShuffleSplit so that train and test sets use different events.
+
+Save:
+
+classifier_grouped_event_splits.csv
+
+Optionally, perform sliding window lattice intensity around the burst:
+
+(If ENABLE_SLIDING_ANALYSIS = True in the script.)
+
+Save to sliding_lattice_intensity.csv.
+
+Generate a PDF summary report:
+
+GW_Constant_Lattice_Report.pdf summarizing classifier performance and top feature importances.
+
+All outputs are written to F:\gw_constant_analysis_outputs by default (configurable at the top of the script).
+
+Installation
+1. Clone the repository
+git clone https://github.com/<your-username>/<your-repo-name>.git
+cd <your-repo-name>
+
+2. Create a Python environment
+
+Using conda (recommended on Windows):
+
+conda create -n gw_lattice_env python=3.10 -y
+conda activate gw_lattice_env
+
+
+Or using venv:
+
+python -m venv gw_lattice_env
+gw_lattice_env\Scripts\activate  # on Windows
+# source gw_lattice_env/bin/activate  # on Linux/macOS
+
+3. Install dependencies
+pip install -r requirements.txt
+
+Configuration
+
+At the top of gw_constant_lattice_analysis.py:
+
+ENABLE_VISUALS = False
+ENABLE_SLIDING_ANALYSIS = False
+
+OUTPUT_DIR = r"F:\gw_constant_analysis_outputs"
+os.environ["ASTROPY_CACHE_DIR"] = r"F:\astropy_cache"
+
+
+You can change:
+
+OUTPUT_DIR to any folder where you want CSVs/plots/PDFs saved.
+
+ASTROPY_CACHE_DIR if you want the GWOSC download cache somewhere else (e.g. another drive).
+
+If you want plots (PNG) and sliding-window analysis, set the toggles to True:
+
+ENABLE_VISUALS = True
+ENABLE_SLIDING_ANALYSIS = True
+
+
+Be aware this will create more files and take more compute time.
+
+Usage
+Basic run
+
+Once the environment is active and requirements installed:
+
+python gw_constant_lattice_analysis.py
+
+
+The script will:
+
+Iterate over the full event list.
+
+Fetch data from GWOSC for H1/L1.
+
+Perform all analyses described above.
+
+Write all CSVs + PDF into OUTPUT_DIR.
+
+If some events can’t be fetched (e.g. missing data or no space in the cache), they will be skipped and errors will be printed, but the rest of the pipeline will continue.
+
+Key Outputs and How to Read Them
+
+legacy_120s_constant_matches.csv
+Full 120 s window counts for each event/detector, per constant and ratio domain.
+
+constant_matches_per_segment.csv
+ON/OFF/NULL segment-level counts. This file backs the classifier and local structure analysis.
+
+monte_carlo_per_segment_stats.csv
+For each constant: mean and standard deviation of per-segment counts from Monte Carlo bootstrapping of ON ratios.
+
+aggregate_on_counts.csv
+Total ON-window counts per constant across all events.
+
+chi_like_global_total.csv
+Approximate Z and χ-like statistics comparing aggregate ON counts vs Monte Carlo expectation.
+
+per_event_z_scores.csv
+Per-event Z / χ-like approximations: how “hot” each constant is in each event compared to the ON Monte Carlo baseline.
+
+tolerance_robustness_on_ratios.csv
+Counts and ranks per constant at different tolerances (e.g. ±0.03, ±0.05, ±0.07).
+This is where you see Fibonacci / φ-bounded growth in the constant lattice.
+
+classifier_feature_importances.csv
+Which constants matter most for distinguishing real ON segments from OFF+NULL segments. This is where π, √3, Feigenbaum α, √5, φ², Khinchin, etc. usually emerge as the key discriminators.
+
+classifier_test_predictions.csv
+Segment-level predictions vs ground truth on the standard random split.
+
+classifier_crossval_scores.csv
+Cross-validation scores for the standard split.
+
+classifier_grouped_event_splits.csv
+Accuracy for the event-grouped splits (train on some events, test on unseen events). This is the strongest generalization check.
+
+GW_Constant_Lattice_Report.pdf
+Human-readable summary: model accuracy, cross-val scores, and top feature importances.
