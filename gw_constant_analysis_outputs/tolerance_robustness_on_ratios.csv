@@ -1,0 +1,142 @@
+Tolerance,Constant,TotalMatches,RankWithinTolerance
+0.03,Golden Ratio,9,8.0
+0.03,Phi Squared,2,13.0
+0.03,Pi,4,11.0
+0.03,Two Pi,0,15.0
+0.03,Euler’s Number,0,15.0
+0.03,Euler–Mascheroni Constant,315,2.0
+0.03,Square Root of 2,15,7.0
+0.03,Square Root of 3,6,10.0
+0.03,Square Root of 5,3,12.0
+0.03,Golden Ratio Conjugate,319,1.0
+0.03,Plastic Constant,44,6.0
+0.03,Apéry’s Constant (zeta(3)),65,4.0
+0.03,Catalan’s Constant,301,3.0
+0.03,Feigenbaum Delta,0,15.0
+0.03,Feigenbaum Alpha,1,14.0
+0.03,Khinchin’s Constant,7,9.0
+0.03,Planck Length (m),47,5.0
+0.03,Planck Time (s),47,5.0
+0.03,Planck Mass (kg),47,5.0
+0.03,Planck Charge (C),47,5.0
+0.03,Planck Temperature (K),0,15.0
+0.03,Absolute Zero (K),47,5.0
+0.03,Cosmic Microwave Background Temp (K),0,15.0
+0.03,Boltzmann Constant (J/K),47,5.0
+0.03,Avogadro Constant (1/mol),0,15.0
+0.03,Gas Constant R (J/(mol·K)),0,15.0
+0.03,Fine-Structure Constant,44,6.0
+0.03,Gravitational Constant (m^3 kg^-1 s^-2),47,5.0
+0.03,Coulomb Constant (N m^2 C^-2),0,15.0
+0.03,Planck Constant (J·s),47,5.0
+0.03,Reduced Planck Constant (J·s),47,5.0
+0.03,Electron Mass (kg),47,5.0
+0.03,Proton Mass (kg),47,5.0
+0.03,Neutron Mass (kg),47,5.0
+0.03,Muon Mass (kg),47,5.0
+0.03,Tau Mass (kg),47,5.0
+0.03,Elementary Charge (C),47,5.0
+0.03,Speed of Light (m/s),0,15.0
+0.03,Hubble Constant (km/s/Mpc),0,15.0
+0.03,Critical Density (kg/m^3),47,5.0
+0.03,Baryon-to-Photon Ratio,47,5.0
+0.03,Astronomical Unit (m),0,15.0
+0.03,Parsec (m),0,15.0
+0.03,Solar Mass (kg),0,15.0
+0.03,Solar Radius (m),0,15.0
+0.03,Earth Mass (kg),0,15.0
+0.03,Earth Radius (m),0,15.0
+0.05,Golden Ratio,326,3.0
+0.05,Phi Squared,9,10.0
+0.05,Pi,4,13.0
+0.05,Two Pi,0,15.0
+0.05,Euler’s Number,0,15.0
+0.05,Euler–Mascheroni Constant,323,4.0
+0.05,Square Root of 2,25,9.0
+0.05,Square Root of 3,7,12.0
+0.05,Square Root of 5,4,13.0
+0.05,Golden Ratio Conjugate,490,2.0
+0.05,Plastic Constant,61,7.0
+0.05,Apéry’s Constant (zeta(3)),278,5.0
+0.05,Catalan’s Constant,558,1.0
+0.05,Feigenbaum Delta,0,15.0
+0.05,Feigenbaum Alpha,2,14.0
+0.05,Khinchin’s Constant,8,11.0
+0.05,Planck Length (m),63,6.0
+0.05,Planck Time (s),63,6.0
+0.05,Planck Mass (kg),63,6.0
+0.05,Planck Charge (C),63,6.0
+0.05,Planck Temperature (K),0,15.0
+0.05,Absolute Zero (K),63,6.0
+0.05,Cosmic Microwave Background Temp (K),0,15.0
+0.05,Boltzmann Constant (J/K),63,6.0
+0.05,Avogadro Constant (1/mol),0,15.0
+0.05,Gas Constant R (J/(mol·K)),0,15.0
+0.05,Fine-Structure Constant,60,8.0
+0.05,Gravitational Constant (m^3 kg^-1 s^-2),63,6.0
+0.05,Coulomb Constant (N m^2 C^-2),0,15.0
+0.05,Planck Constant (J·s),63,6.0
+0.05,Reduced Planck Constant (J·s),63,6.0
+0.05,Electron Mass (kg),63,6.0
+0.05,Proton Mass (kg),63,6.0
+0.05,Neutron Mass (kg),63,6.0
+0.05,Muon Mass (kg),63,6.0
+0.05,Tau Mass (kg),63,6.0
+0.05,Elementary Charge (C),63,6.0
+0.05,Speed of Light (m/s),0,15.0
+0.05,Hubble Constant (km/s/Mpc),0,15.0
+0.05,Critical Density (kg/m^3),63,6.0
+0.05,Baryon-to-Photon Ratio,63,6.0
+0.05,Astronomical Unit (m),0,15.0
+0.05,Parsec (m),0,15.0
+0.05,Solar Mass (kg),0,15.0
+0.05,Solar Radius (m),0,15.0
+0.05,Earth Mass (kg),0,15.0
+0.05,Earth Radius (m),0,15.0
+0.07,Golden Ratio,330,4.0
+0.07,Phi Squared,10,11.0
+0.07,Pi,4,14.0
+0.07,Two Pi,0,16.0
+0.07,Euler’s Number,8,12.0
+0.07,Euler–Mascheroni Constant,334,3.0
+0.07,Square Root of 2,34,10.0
+0.07,Square Root of 3,322,6.0
+0.07,Square Root of 5,5,13.0
+0.07,Golden Ratio Conjugate,506,2.0
+0.07,Plastic Constant,74,7.0
+0.07,Apéry’s Constant (zeta(3)),324,5.0
+0.07,Catalan’s Constant,962,1.0
+0.07,Feigenbaum Delta,0,16.0
+0.07,Feigenbaum Alpha,3,15.0
+0.07,Khinchin’s Constant,8,12.0
+0.07,Planck Length (m),71,8.0
+0.07,Planck Time (s),71,8.0
+0.07,Planck Mass (kg),71,8.0
+0.07,Planck Charge (C),71,8.0
+0.07,Planck Temperature (K),0,16.0
+0.07,Absolute Zero (K),71,8.0
+0.07,Cosmic Microwave Background Temp (K),8,12.0
+0.07,Boltzmann Constant (J/K),71,8.0
+0.07,Avogadro Constant (1/mol),0,16.0
+0.07,Gas Constant R (J/(mol·K)),0,16.0
+0.07,Fine-Structure Constant,70,9.0
+0.07,Gravitational Constant (m^3 kg^-1 s^-2),71,8.0
+0.07,Coulomb Constant (N m^2 C^-2),0,16.0
+0.07,Planck Constant (J·s),71,8.0
+0.07,Reduced Planck Constant (J·s),71,8.0
+0.07,Electron Mass (kg),71,8.0
+0.07,Proton Mass (kg),71,8.0
+0.07,Neutron Mass (kg),71,8.0
+0.07,Muon Mass (kg),71,8.0
+0.07,Tau Mass (kg),71,8.0
+0.07,Elementary Charge (C),71,8.0
+0.07,Speed of Light (m/s),0,16.0
+0.07,Hubble Constant (km/s/Mpc),0,16.0
+0.07,Critical Density (kg/m^3),71,8.0
+0.07,Baryon-to-Photon Ratio,71,8.0
+0.07,Astronomical Unit (m),0,16.0
+0.07,Parsec (m),0,16.0
+0.07,Solar Mass (kg),0,16.0
+0.07,Solar Radius (m),0,16.0
+0.07,Earth Mass (kg),0,16.0
+0.07,Earth Radius (m),0,16.0

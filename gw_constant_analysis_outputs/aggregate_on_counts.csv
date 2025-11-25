@@ -1,0 +1,48 @@
+Constant,ObservedTotal,ExpectedTotal,StdTotal
+Golden Ratio,326,326.11699999999996,17.85752589526332
+Phi Squared,9,9.001,2.9968650119750135
+Pi,4,4.024,1.9901614004899204
+Two Pi,0,0.0,0.0
+Euler’s Number,0,0.0,0.0
+Euler–Mascheroni Constant,323,323.55400000000003,17.650464821074827
+Square Root of 2,25,24.785,4.9488763876257815
+Square Root of 3,7,6.881,2.6191952771796156
+Square Root of 5,4,3.9589999999999996,1.9964047435327337
+Golden Ratio Conjugate,490,491.59,21.598360817432418
+Plastic Constant,61,61.115,7.78785448631393
+Apéry’s Constant (zeta(3)),278,277.397,16.515369783931572
+Catalan’s Constant,558,558.394,22.732621415050225
+Feigenbaum Delta,0,0.0,0.0
+Feigenbaum Alpha,2,2.012,1.411802252441892
+Khinchin’s Constant,8,7.972,2.8179286009407694
+Planck Length (m),63,63.2,7.936875959721181
+Planck Time (s),63,63.2,7.936875959721181
+Planck Mass (kg),63,63.2,7.936875959721181
+Planck Charge (C),63,63.2,7.936875959721181
+Planck Temperature (K),0,0.0,0.0
+Absolute Zero (K),63,63.2,7.936875959721181
+Cosmic Microwave Background Temp (K),0,0.0,0.0
+Boltzmann Constant (J/K),63,63.2,7.936875959721181
+Avogadro Constant (1/mol),0,0.0,0.0
+Gas Constant R (J/(mol·K)),0,0.0,0.0
+Fine-Structure Constant,60,60.165,7.764037448389852
+Gravitational Constant (m^3 kg^-1 s^-2),63,63.2,7.936875959721181
+Coulomb Constant (N m^2 C^-2),0,0.0,0.0
+Planck Constant (J·s),63,63.2,7.936875959721181
+Reduced Planck Constant (J·s),63,63.2,7.936875959721181
+Electron Mass (kg),63,63.2,7.936875959721181
+Proton Mass (kg),63,63.2,7.936875959721181
+Neutron Mass (kg),63,63.2,7.936875959721181
+Muon Mass (kg),63,63.2,7.936875959721181
+Tau Mass (kg),63,63.2,7.936875959721181
+Elementary Charge (C),63,63.2,7.936875959721181
+Speed of Light (m/s),0,0.0,0.0
+Hubble Constant (km/s/Mpc),0,0.0,0.0
+Critical Density (kg/m^3),63,63.2,7.936875959721181
+Baryon-to-Photon Ratio,63,63.2,7.936875959721181
+Astronomical Unit (m),0,0.0,0.0
+Parsec (m),0,0.0,0.0
+Solar Mass (kg),0,0.0,0.0
+Solar Radius (m),0,0.0,0.0
+Earth Mass (kg),0,0.0,0.0
+Earth Radius (m),0,0.0,0.0
