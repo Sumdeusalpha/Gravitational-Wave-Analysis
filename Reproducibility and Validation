@@ -1,0 +1,27 @@
+This repository is designed so that anyone can:
+
+Clone the repo.
+
+Install dependencies.
+
+Run the script.
+
+Regenerate:
+
+Constant lattice counts.
+
+Monte Carlo expectations.
+
+Z / χ-like tables.
+
+Classifier accuracies (including event-grouped splits).
+
+Tolerance robustness tables.
+
+The intent is to invite open validation and critique:
+
+Physicists can check for instrument artifacts and selection effects.
+
+Statisticians can probe the null models and multiple-testing issues.
+
+Data scientists can rerun or extend the classifiers, test new architectures, or add more events.
