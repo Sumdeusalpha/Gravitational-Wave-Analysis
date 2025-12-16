@@ -1,0 +1,63 @@
+What the Script Does (High-Level)
+
+This document explains the analysis pipeline in plain language.
+
+Step 1: Event Retrieval
+
+For each event and detector, the script retrieves the event GPS time and fetches a strain segment centered on that time using a legacy full window.
+
+If data retrieval fails, the script reports the error and continues with the next event.
+
+Step 2: Ratio Extraction
+
+From each strain segment, the script identifies amplitude peaks and dips and computes ratios in both amplitude and time domains. These ratios reduce raw strain data into scale-independent quantities.
+
+Ratio families include:
+
+Peak-to-Peak
+
+Peak-to-Dip
+
+Dip-to-Dip
+
+Step 3: Constant Matching
+
+Computed ratios are compared against a predefined set of mathematical, physical, and astronomical constants using a numerical tolerance. Matches are counted per constant and per domain.
+
+Step 4: Legacy Full-Window Analysis
+
+The script summarizes constant matches over the full legacy window to provide a broad baseline context around each event.
+
+Step 5: ON/OFF Window Analysis
+
+Short ON windows centered near the event GPS time are compared against OFF windows away from the event. This isolates event-localized structure from background behavior.
+
+Step 6: Null Surrogates
+
+Two null transformations are applied to ON-window strain:
+
+Phase scrambling
+
+Segment shuffling
+
+Each null is processed identically to real data to test robustness of observed structure.
+
+Step 7: Monte Carlo Null Estimation
+
+Using the empirical distribution of ON-window ratios, the script generates Monte Carlo samples to estimate expected constant match counts under a ratio-based null model.
+
+Step 8: Statistical Summaries
+
+Aggregate observed counts are compared against Monte Carlo expectations to produce approximate Z-scores, chi-like statistics, and p-value estimates.
+
+Step 9: Tolerance Robustness
+
+Constant matches are recomputed under multiple tolerances to assess stability of rankings across tolerance bands.
+
+Step 10: Classifier Validation
+
+A Random Forest classifier is trained to distinguish real ON segments from OFF and null segments using constant-match features. Cross-validation and event-grouped splits assess robustness.
+
+Step 11: Output Generation
+
+All results are written to CSV files, with optional plots and a PDF summary report.
