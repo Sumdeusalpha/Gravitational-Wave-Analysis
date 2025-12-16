@@ -1,0 +1,11 @@
+gwosc
+gwpy
+astropy
+numpy
+scipy
+pandas
+matplotlib
+seaborn
+scikit-learn
+joblib
+fpdf
