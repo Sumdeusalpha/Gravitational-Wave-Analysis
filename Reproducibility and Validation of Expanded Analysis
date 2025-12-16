@@ -1,0 +1,31 @@
+Reproducibility and Validation
+
+Reproducibility Expectations
+
+A run is considered reproducible if the script executes from a clean environment using the provided requirements and produces outputs with consistent structure and meaning.
+
+Some numerical variation is expected due to stochastic elements unless random seeds are fixed.
+
+Validation Layers
+
+The pipeline includes multiple validation mechanisms:
+
+ON vs OFF window comparison to test event locality
+
+Phase-scrambled nulls to test phase dependence
+
+Segment-shuffled nulls to test temporal ordering
+
+Monte Carlo null estimation from observed ratio distributions
+
+Classifier separation of real vs null segments
+
+Each layer targets a different potential confound.
+
+Interpretation Guidance
+
+Statistical outputs are intended as exploratory diagnostics rather than definitive hypothesis tests. Results indicate structured differences that warrant deeper formal analysis.
+
+Recommended Reporting
+
+When presenting results, report window definitions, tolerances, null generation settings, Monte Carlo parameters, and classifier evaluation methodology to ensure interpretability.
