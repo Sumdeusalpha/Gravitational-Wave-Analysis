@@ -1,0 +1,29 @@
+Data Source
+
+Source of Strain Data
+
+All gravitational-wave strain data and event metadata used by this repository are retrieved from the Gravitational Wave Open Science Center (GWOSC).
+
+The pipeline uses:
+
+GWOSC event metadata to obtain GPS timestamps
+
+Open strain data accessed via GWPy TimeSeries fetch utilities
+
+Network and Caching Behavior
+
+The first execution may take longer due to network downloads of strain data. Subsequent runs may benefit from local caching, depending on environment configuration.
+
+If a cache directory is configured and writable, downloaded data may be reused across runs.
+
+Data Integrity Expectations
+
+All event identifiers used correspond to publicly listed GWOSC events. If data for a specific event or detector is unavailable, the script logs the error and continues processing remaining events.
+
+Detector Coverage
+
+By default, the analysis processes data from the H1 (Hanford) and L1 (Livingston) detectors. The detector list can be modified in the script configuration.
+
+Event List Notes
+
+The event list includes canonical gravitational-wave detections, multiple catalog versions where applicable, and selected special entries where available. The analysis treats all event names as catalog keys and does not rely on astrophysical classification.
