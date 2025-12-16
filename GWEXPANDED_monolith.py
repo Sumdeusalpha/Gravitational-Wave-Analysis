@@ -1,4 +1,30 @@
 # -*- coding: utf-8 -*-
+
+import os
+from pathlib import Path
+
+def _pick_windows_or_local(preferred_windows_path: str, local_fallback_dirname: str) -> str:
+    """
+    If the preferred Windows drive path exists, use it.
+    Otherwise, fall back to a local directory (relative to this file).
+    """
+    preferred = Path(preferred_windows_path)
+    if preferred.drive and preferred.exists():
+        return str(preferred)
+
+    here = Path(__file__).resolve().parent
+    fallback = (here / local_fallback_dirname).resolve()
+    fallback.mkdir(parents=True, exist_ok=True)
+    return str(fallback)
+
+# Portable defaults (will still honor your F: drive when present)
+ASTROPY_CACHE_DIR = _pick_windows_or_local(r"F:\astropy_cache", "astropy_cache")
+OUTPUT_DIR       = _pick_windows_or_local(r"F:\gw_constant_analysis_outputs", "gw_constant_analysis_outputs")
+
+os.environ["ASTROPY_CACHE_DIR"] = ASTROPY_CACHE_DIR
+os.makedirs(ASTROPY_CACHE_DIR, exist_ok=True)
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
 """
 Monolithic export of GWEXPANDED.ipynb
 
